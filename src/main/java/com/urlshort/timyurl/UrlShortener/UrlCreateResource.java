@@ -39,9 +39,7 @@ public class UrlCreateResource {
 		     return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("https://"+geturl.getUrl_name())).build();
 		}
 		catch(Exception mn) {
-			System.out.println("No records are found");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
-		
-		return null;
 	}
 }
